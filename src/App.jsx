@@ -14,7 +14,9 @@ function App() {
     <>
       <h1>투두리스트 타임어택</h1>
       <TodoForm />
+      <h2>Working...</h2>
       <TodoList todos={workingTodos} />
+      <h2>Done...</h2>
       <TodoList todos={doneTodos} />
     </>
   );

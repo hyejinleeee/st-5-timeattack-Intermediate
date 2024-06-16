@@ -6,11 +6,11 @@ export default function TodoItem({ todo }) {
   const dispatch = useDispatch();
 
   const handleDel = (id) => {
-    dispatch(toggleTodo(id));
+    dispatch(delTodo(id));
   };
 
   const handleToggle = (id) => {
-    dispatch(delTodo(id));
+    dispatch(toggleTodo(id));
   };
 
   return (
@@ -29,10 +29,10 @@ export default function TodoItem({ todo }) {
         <p>내용: {todo.content}</p>
       </section>
       <section>
-        <button onClick={() => handleDel(todo.id)}>
+        <button onClick={() => handleToggle(todo.id)}>
           {todo.isDone ? "취소" : "완료"}
         </button>
-        <button onClick={() => handleToggle(todo.id)}>삭제</button>
+        <button onClick={() => handleDel(todo.id)}>삭제</button>
       </section>
     </li>
   );

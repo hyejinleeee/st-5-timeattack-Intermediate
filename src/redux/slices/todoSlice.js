@@ -17,9 +17,10 @@ export const todoSlice = createSlice({
     },
     toggleTodo: (state, action) => {
       const id = action.payload;
-      state.map((todo) =>
-        todo.id === id ? { ...todo, isDone: !isDone } : todo
-      );
+      const todo = state.find((todo) => todo.id === id);
+      if (todo) {
+        todo.isDone = !todo.isDone;
+      }
     },
   },
 });
